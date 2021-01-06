@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body>
+    {{> navbar}}
+
+    <div class="row">
+        <h2>Create article</h2>
+
+        <form action="/articles/create" method="POST">
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="title" type="text" name="title">
+                    <label for="title">Title</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="text" type="text" name="text">
+                    <label for="title">Text</label>
+                </div>
+            </div>
+
+            <button class="btn" type="submit">Create</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

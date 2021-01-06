@@ -1,0 +1,24 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Main</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isAllListPage}}
+            <li class="active"><a href="/articles/all_list/0">All articles</a></li>
+            {{else}}
+            <li><a href="/articles/all_list/0">All articles</a></li>
+            {{/if}}
+
+            {{#if isBestListPage}}
+            <li class="active"><a href="/articles/best_list">Best articles</a></li>
+            {{else}}
+            <li><a href="/articles/best_list">Best articles</a></li>
+            {{/if}}
+
+            {{#if isCreatePage}}
+            <li class="active"><a href="/articles/create">Create article</a></li>
+            {{else}}
+            <li><a href="/articles/create">Create article</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
