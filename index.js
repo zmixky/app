@@ -8,6 +8,8 @@ const path = require('path');
 
 const { mainRouter, articlesRouter } = require('./routes');
 
+const { extraOptionsManager } = require('./libs/extra_options');
+
 const PORT = 3030;
 const URI = 'mongodb://localhost/app_db';
 const PARAMS = {
@@ -31,13 +33,17 @@ app.use((err, req, res, next) => {
     if (err) {
         console.log(err);
 
-        res.send("-_-");
+        res.send(err);
     }
 });
 
 async function start() {
     try {
         await mongoose.connect(URI, PARAMS);
+
+        if (!extraOptionsManager.isInit()) {
+            await extraOptionsManager.init();
+        }
 
         app.listen(PORT, () => {
             console.log('...server has been started...');

@@ -1,16 +1,12 @@
 const { Router } = require('express');
 
+const { MainController } = require('../controllers');
+
+const mainController = new MainController();
+
 const router = Router();
 
-router.get('/', (req, res, next) => {
-    try {
-        res.render("main.hbs", {
-            isMainPage: true,
-        });
-    } catch (err) {
-        next(err);
-    }
-});
+router.get('/', mainController.get);
 
 module.exports = router;
 

@@ -15,7 +15,7 @@
 
         <div class="collection">
             {{#each articles}}
-            <a href="/articles/article/{{this.id}}" class="collection-item"><span
+            <a href="/articles/{{this.id}}" class="collection-item"><span
                     class="badge">{{this.views}}</span>{{this.title}}</a>
             {{/each}}
         </div>
@@ -25,11 +25,11 @@
 
     <ul class="pagination">
         {{#if isLeft}}
-        <li class="disabled"><a href="/articles/all_list/{{left}}"><i class="material-icons">Сюди</i></a></li>
+        <li class="disabled"><a href="/articles/all/{{left}}"><i class="material-icons">Сюди</i></a></li>
         {{/if}}
 
         {{#if isRight}}
-        <li class="waves-effect"><a href="/articles/all_list/{{right}}"><i class="material-icons">Туди</i></a>
+        <li class="waves-effect"><a href="/articles/all/{{right}}"><i class="material-icons">Туди</i></a>
         </li>
         {{/if}}
 
